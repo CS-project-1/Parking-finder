@@ -15,41 +15,39 @@
 
 
         <EditText
-            android:id="@+id/userid"
+            android:id="@+id/email_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Id number"
+            android:hint="Email Address"
             android:layout_marginTop="20dp"
             android:textSize="16dp"
-            android:textColorHint="@color/colorButton"
-            android:textColor="#ADCCE2"
+            android:textColorHint="#FF018786"
+            android:textColor="#000"
             android:layout_marginLeft="22dp"
             android:inputType="text"
             android:background="#0000"
             android:padding="16dp"
             android:maxLength="8"
-            android:drawableRight="@drawable/user"
             android:layout_marginRight="35dp"/>
         <View
             android:layout_width="match_parent"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:layout_height="1dp"
-            android:background="@color/colorButton"/>
+            android:background="#BB86FC"/>
         <EditText
             android:id="@+id/pswrdL"
             android:textSize="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
-            android:textColorHint="@color/colorButton"
+            android:textColorHint="#FF018786"
             android:layout_marginLeft="22dp"
             android:inputType="textPassword"
-            android:textColor="#ADCCE2"
+            android:textColor="#000"
             android:maxLength="12"
             android:background="#0000"
             android:padding="16dp"
-            android:drawableRight="@drawable/pasword"
             android:layout_marginRight="35dp"/>
         <View
             android:layout_width="match_parent"
@@ -57,12 +55,12 @@
             android:layout_marginRight="40dp"
             android:layout_height="1dp"
             android:layout_marginBottom="10dp"
-            android:background="@color/colorButton"/>
+            android:background="#BB86FC"/>
         <Button
             android:id="@+id/lButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorButton"
+            android:background="#3700B3"
             android:text="Sign In"
             android:textSize="16dp"
             android:textColor="#fff"
@@ -72,32 +70,41 @@
             android:padding="16dp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="28dp"
+            android:onClick="login"
             android:layout_marginTop="32dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textColor="#9F6700"
+            android:textColor="#FF018786"
             android:textStyle="bold"
             android:textSize="15sp"
             android:text="Don't have an account?Sign up here!"
             android:id="@+id/signInTextView"
             android:clickable="true"
+            android:onClick="RedirectSignUp"
             android:layout_gravity="center_horizontal"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textColor="#9F6700"
+            android:textColor="#FF018786"
             android:textStyle="bold"
             android:textSize="15sp"
             android:text="Forgot Password?"
             android:id="@+id/forgotPassword"
             android:clickable="true"
-            android:onClick="onClick"
+            android:onClick="ResetPassword"
             android:layout_gravity="center_horizontal"/>
     </LinearLayout>
+    <ProgressBar
+        android:id="@+id/indeterminateBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -107,7 +114,6 @@
         android:textSize="30dp"
         android:textStyle="bold"
         android:id="@+id/login"
-        android:layout_above="@+id/linearLayout"
         android:layout_centerHorizontal="true"/>
 
     <ImageView
@@ -118,7 +124,8 @@
         android:layout_marginTop="-3dp"
         android:layout_marginBottom="3dp"
         android:gravity="center"
-        android:scaleType="fitXY"
-        android:src="@drawable/ngamia3"/>
+        android:scaleType="fitXY"/>
+<!--        android:src="@drawable/parkingLogo"-->
+
 
 </RelativeLayout>

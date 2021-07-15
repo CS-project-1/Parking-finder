@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "754803328259",
+    "project_id": "bold-zoo-303509",
+    "storage_bucket": "bold-zoo-303509.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754803328259:android:7a5efbab7c075612e91536",
+        "android_client_info": {
+          "package_name": "com.andy.smartparking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "754803328259-20srppakehk5jff68d2oo1u5ostrnmhu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.andy.smartparking",
+            "certificate_hash": "f58c3b45b6e348469508d9c0bd0dc2d21d8971db"
+          }
+        },
+        {
+          "client_id": "754803328259-54tct6fpoebcisgshsa0k349m39dv6s9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCe_5vcztssgFIvle6uc4Seh_wRaPdvmsk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "754803328259-54tct6fpoebcisgshsa0k349m39dv6s9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

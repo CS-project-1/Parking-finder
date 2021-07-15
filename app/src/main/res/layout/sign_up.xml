@@ -15,33 +15,12 @@
 
 
         <EditText
-            android:id="@+id/surname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="22dp"
-            android:layout_marginRight="35dp"
-            android:background="#0000"
-            android:hint="Surname"
-            android:inputType="text"
-            android:padding="16dp"
-            android:textColor="#ADCCE2"
-            android:textColorHint="@color/colorButton"
-            android:textSize="16dp"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_height="1dp"
-            android:background="@color/colorButton" />
-
-        <EditText
             android:textSize="16dp"
             android:id="@+id/firstname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Firstname"
-            android:textColorHint="@color/colorButton"
+            android:textColorHint="#FF018786"
             android:textColor="#ADCCE2"
             android:layout_marginLeft="22dp"
             android:inputType="text"
@@ -53,16 +32,37 @@
             android:layout_width="match_parent"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
+            android:layout_height="1dp" />
+<!--        android:background="@color/colorButton"-->
+        <EditText
+            android:id="@+id/surname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="35dp"
+            android:background="#0000"
+            android:hint="Surname"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textColor="#ADCCE2"
+            android:textColorHint="#FF018786"
+            android:textSize="16dp"/>
+
+
+        <View
+            android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/colorButton"/>
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp" />
+<!--        android:background="@color/colorButton"-->
 
         <EditText
             android:textSize="16dp"
-            android:id="@+id/idno"
+            android:id="@+id/email_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Identification Number"
-            android:textColorHint="@color/colorButton"
+            android:hint="Email Address"
+            android:textColorHint="#FF018786"
             android:textColor="#ADCCE2"
             android:layout_marginLeft="22dp"
             android:inputType="number"
@@ -74,36 +74,57 @@
             android:layout_width="match_parent"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:layout_height="1dp"
-            android:background="@color/colorButton"/>
+            android:layout_height="1dp" />
+<!--        android:background="@color/colorButton"-->
         <EditText
             android:textSize="16dp"
             android:id="@+id/pswrd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
-            android:textColorHint="@color/colorButton"
+
             android:layout_marginLeft="22dp"
             android:inputType="textPassword"
             android:maxLength="12"
-            android:textColor="#ADCCE2"
+            android:textColor="#FF018786"
             android:background="#0000"
             android:padding="16dp"
             android:layout_marginRight="35dp"/>
+<!--        android:textColorHint="@color/colorButton"-->
         <View
             android:layout_width="match_parent"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:layout_height="1dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/colorButton"/>
+            android:layout_marginBottom="10dp" />
+<!--        android:background="@color/colorButton"-->
 
+        <EditText
+            android:textSize="16dp"
+            android:id="@+id/confirmpswrd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm password"
+            android:layout_marginLeft="22dp"
+            android:inputType="textPassword"
+            android:maxLength="12"
+            android:textColor="#FF018786"
+            android:background="#0000"
+            android:padding="16dp"
+            android:layout_marginRight="35dp"/>
+        <!--        android:textColorHint="@color/colorButton"-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp" />
         <Button
             android:id="@+id/createButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorButton"
-            android:text="Create"
+            android:background="@color/black"
+            android:text="@string/sign_up"
             android:textSize="16dp"
             android:textColor="#fff"
             android:gravity="center"
@@ -111,6 +132,7 @@
             android:layout_marginRight="40dp"
             android:padding="16dp"
             android:layout_alignParentBottom="true"
+            android:onClick="signup"
             android:layout_marginBottom="28dp"
             android:layout_marginTop="32dp"/>
 
@@ -118,15 +140,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textColor="#9F6700"
+            android:textColor="#FF018786"
             android:textStyle="bold"
             android:textSize="15sp"
-            android:text="Already have an account? Log in here!"
-            android:id="@+id/lTextView"
+            android:text="@string/already_have_an_account_log_in_here"
+            android:id="@+id/linearLayout"
             android:clickable="true"
-            android:onClick="onClick"
+            android:onClick="LoginRedirect"
             android:layout_gravity="center_horizontal"/>
     </LinearLayout>
+    <ProgressBar
+        android:id="@+id/indeterminateBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -136,7 +165,6 @@
         android:textSize="30dp"
         android:textStyle="bold"
         android:id="@+id/create"
-        android:layout_above="@+id/linearLayout"
         android:layout_centerHorizontal="true"/>
 
     <ImageView
@@ -147,7 +175,7 @@
         android:layout_marginTop="-3dp"
         android:layout_marginBottom="3dp"
         android:gravity="center"
-        android:scaleType="fitXY"
-        android:src="@drawable/ngamia3"/>
+        android:scaleType="fitXY"/>
+<!--        android:src="@drawable/parkingLogo"-->
 
 </RelativeLayout>

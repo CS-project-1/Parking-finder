@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">SmartParking</string>
+    <string name="log_in">Log In</string>
+    <string name="already_have_an_account_log_in_here">Already have an account? Log in here!</string>
+    <string name="sign_up">sign up</string>
+    <string name="wrong_input">wrong input</string>
+    <string name="invalid_name">Please enter a valid Name</string>
+    <string name="invalid_email">Please enter a valid email</string>
+    <string name="invalid_confirm_password">Confirm password does not match password</string>
+    <string name="invalid_password">Please enter a valid password</string>
+    <string name="confirm_password">Confirm Password</string>
 </resources>
