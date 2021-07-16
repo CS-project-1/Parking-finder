@@ -7,25 +7,53 @@
     tools:context=".user_profile">
 
     <TextView
-        android:id="@+id/user_welcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome user"
+        android:id="@+id/firstnamep"
+        android:layout_width="157dp"
+        android:layout_height="37dp"
+        android:text="First Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.214" />
+
+    <TextView
+        android:id="@+id/surnamep"
+        android:layout_width="211dp"
+        android:layout_height="38dp"
+        android:text="Surname"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.304" />
+
+    <TextView
+        android:id="@+id/email_addressp"
+        android:layout_width="230dp"
+        android:layout_height="36dp"
+        android:text="Email"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/surname"
+        app:layout_constraintVertical_bias="0.061" />
 
     <Button
         android:id="@+id/logoutbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="260dp"
+        android:onClick="logout"
         android:text="@string/logout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_welcome"
-        app:layout_constraintVertical_bias="0.305"
-        android:onClick="logout"/>
+        app:layout_constraintTop_toBottomOf="@+id/email_address"
+        app:layout_constraintVertical_bias="0.783" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
