@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
 
@@ -76,7 +77,14 @@ public class Login extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
                             //redirect to user profile
-                        startActivity(new Intent(Login.this,user_profile.class));
+                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                        if(user.isEmailVerified()){
+                            startActivity(new Intent(Login.this,user_profile.class));
+                        }else{
+                            user.sendEmailVerification();
+                            Toast.makeText(Login.this,"Check your email to verify your accoiunt",Toast.LENGTH_LONG).show();
+                        }
+
                     }else{
                         Toast.makeText(Login.this,"Failed to register",Toast.LENGTH_LONG).show();
                         progressBar.setVisibility(View.GONE);
@@ -85,7 +93,8 @@ public class Login extends AppCompatActivity {
             });
 
         }else{
-
+            Toast.makeText(Login.this,"Failed to register",Toast.LENGTH_LONG).show();
+            progressBar.setVisibility(View.GONE);
         }
 
     }
