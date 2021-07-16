@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:hint="Firstname"
             android:textColorHint="#FF018786"
-            android:textColor="#ADCCE2"
+            android:textColor="@color/black"
             android:layout_marginLeft="22dp"
             android:inputType="text"
             android:background="#0000"
@@ -32,7 +32,8 @@
             android:layout_width="match_parent"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:layout_height="1dp" />
+            android:layout_height="1dp"
+            android:background="#FF018786"/>
 <!--        android:background="@color/colorButton"-->
         <EditText
             android:id="@+id/surname"
@@ -44,8 +45,8 @@
             android:hint="Surname"
             android:inputType="text"
             android:padding="16dp"
-            android:textColor="#ADCCE2"
             android:textColorHint="#FF018786"
+            android:textColor="@color/black"
             android:textSize="16dp"/>
 
 
@@ -53,7 +54,8 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp" />
+            android:layout_marginRight="40dp"
+            android:background="#FF018786"/>
 <!--        android:background="@color/colorButton"-->
 
         <EditText
@@ -63,18 +65,19 @@
             android:layout_height="wrap_content"
             android:hint="Email Address"
             android:textColorHint="#FF018786"
-            android:textColor="#ADCCE2"
+            android:textColor="@color/black"
             android:layout_marginLeft="22dp"
-            android:inputType="number"
+            android:inputType="textEmailAddress"
             android:background="#0000"
             android:padding="16dp"
-            android:maxLength="8"
             android:layout_marginRight="35dp"/>
+
         <View
             android:layout_width="match_parent"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:layout_height="1dp" />
+            android:layout_height="1dp"
+            android:background="#FF018786"/>
 <!--        android:background="@color/colorButton"-->
         <EditText
             android:textSize="16dp"
@@ -82,11 +85,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
-
+            android:textColorHint="#FF018786"
+            android:textColor="@color/black"
             android:layout_marginLeft="22dp"
             android:inputType="textPassword"
-            android:maxLength="12"
-            android:textColor="#FF018786"
             android:background="#0000"
             android:padding="16dp"
             android:layout_marginRight="35dp"/>
@@ -96,7 +98,8 @@
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:layout_height="1dp"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="10dp"
+            android:background="#FF018786"/>
 <!--        android:background="@color/colorButton"-->
 
         <EditText
@@ -107,8 +110,8 @@
             android:hint="Confirm password"
             android:layout_marginLeft="22dp"
             android:inputType="textPassword"
-            android:maxLength="12"
-            android:textColor="#FF018786"
+            android:textColorHint="#FF018786"
+            android:textColor="@color/black"
             android:background="#0000"
             android:padding="16dp"
             android:layout_marginRight="35dp"/>
@@ -118,7 +121,8 @@
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:layout_height="1dp"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="10dp"
+            android:background="#FF018786"/>
         <Button
             android:id="@+id/createButton"
             android:layout_width="match_parent"
