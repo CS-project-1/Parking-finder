@@ -9,11 +9,16 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.basgeekball.awesomevalidation.utility.RegexTemplate;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {
 
@@ -22,6 +27,7 @@ public class Login extends AppCompatActivity {
     private EditText pswrd;
     private TextView forgotpswrd;
     private ProgressBar progressBar;
+    private FirebaseAuth mAuth;
 
     AwesomeValidation awesomeValidation;
 
@@ -46,6 +52,8 @@ public class Login extends AppCompatActivity {
         awesomeValidation.addValidation(this,R.id.pswrdL,RegexTemplate.NOT_EMPTY,R.string.invalid_password);
         awesomeValidation.addValidation(this, R.id.pswrdL, ".{6,}", R.string.invalid_password);
 
+        mAuth = FirebaseAuth.getInstance();
+
     }
 
     public void RedirectSignUp(View view) {
@@ -58,6 +66,27 @@ public class Login extends AppCompatActivity {
     }
 
     public void login(View view) {
+        String email1 = email.getText().toString().trim();;
+        String password1 = pswrd.getText().toString().trim();
+
+        if(awesomeValidation.validate()){
+            progressBar.setVisibility(View.VISIBLE);
+            mAuth.signInWithEmailAndPassword(email1,password1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(task.isSuccessful()){
+                            //redirect to user profile
+                        startActivity(new Intent(Login.this,user_profile.class));
+                    }else{
+                        Toast.makeText(Login.this,"Failed to register",Toast.LENGTH_LONG).show();
+                        progressBar.setVisibility(View.GONE);
+                    }
+                }
+            });
+
+        }else{
+
+        }
 
     }
 }

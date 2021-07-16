@@ -1,5 +1,6 @@
 package com.andy.smartparking;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -75,7 +76,7 @@ public class SignUp extends AppCompatActivity {
     }
 
     public void LoginRedirect(View view) {
-
+        startActivity(new Intent(SignUp.this,Login.class));
     }
 //    if(awesomeValidation.validate()){
 //                regiterUser();

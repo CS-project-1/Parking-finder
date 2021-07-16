@@ -27,7 +27,6 @@
             android:inputType="text"
             android:background="#0000"
             android:padding="16dp"
-            android:maxLength="8"
             android:layout_marginRight="35dp"/>
         <View
             android:layout_width="match_parent"
