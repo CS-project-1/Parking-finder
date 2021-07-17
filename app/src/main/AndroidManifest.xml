@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartParking"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ResetPassword"></activity>
+        <activity android:name=".splash_screen"></activity>
+        <activity android:name=".ResetPassword" />
         <activity android:name=".user_profile" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Login">
@@ -22,8 +23,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>>
-        <activity android:name=".SignUp"></activity>
+        </activity>
+        <activity android:name=".SignUp" />
     </application>
 
 </manifest>
