@@ -14,115 +14,114 @@
         android:id="@+id/form">
 
 
-        <EditText
-            android:textSize="16dp"
-            android:id="@+id/firstname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Firstname"
-            android:textColorHint="#FF018786"
-            android:textColor="@color/black"
-            android:layout_marginLeft="22dp"
-            android:inputType="text"
-            android:background="#0000"
-            android:padding="16dp"
-            android:layout_marginRight="35dp"/>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_height="1dp"
-            android:background="#FF018786"/>
-<!--        android:background="@color/colorButton"-->
-        <EditText
-            android:id="@+id/surname"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="22dp"
             android:layout_marginRight="35dp"
-            android:background="#0000"
-            android:hint="Surname"
-            android:inputType="text"
-            android:padding="16dp"
             android:textColorHint="#FF018786"
-            android:textColor="@color/black"
-            android:textSize="16dp"/>
-
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:background="#FF018786"/>
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Firstname"
+                android:background="@color/white"
+                android:textSize="16dp"
+                android:id="@+id/firstname"
+                android:textColor="@color/black"
+                android:padding="16dp"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 <!--        android:background="@color/colorButton"-->
 
-        <EditText
-            android:textSize="16dp"
-            android:id="@+id/email_address"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email Address"
-            android:textColorHint="#FF018786"
-            android:textColor="@color/black"
             android:layout_marginLeft="22dp"
-            android:inputType="textEmailAddress"
-            android:background="#0000"
-            android:padding="16dp"
-            android:layout_marginRight="35dp"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_height="1dp"
-            android:background="#FF018786"/>
-<!--        android:background="@color/colorButton"-->
-        <EditText
-            android:textSize="16dp"
-            android:id="@+id/pswrd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
+            android:layout_marginRight="35dp"
             android:textColorHint="#FF018786"
-            android:textColor="@color/black"
-            android:layout_marginLeft="22dp"
-            android:inputType="textPassword"
-            android:background="#0000"
-            android:padding="16dp"
-            android:layout_marginRight="35dp"/>
-<!--        android:textColorHint="@color/colorButton"-->
-        <View
-            android:layout_width="match_parent"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_height="1dp"
-            android:layout_marginBottom="10dp"
-            android:background="#FF018786"/>
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Surname"
+                android:background="@color/white"
+                android:textSize="16dp"
+                android:id="@+id/surname"
+                android:textColor="@color/black"
+                android:padding="16dp"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 <!--        android:background="@color/colorButton"-->
 
-        <EditText
-            android:textSize="16dp"
-            android:id="@+id/confirmpswrd"
+
+<!--        android:background="@color/colorButton"-->
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Confirm password"
             android:layout_marginLeft="22dp"
-            android:inputType="textPassword"
+            android:layout_marginRight="35dp"
             android:textColorHint="#FF018786"
-            android:textColor="@color/black"
-            android:background="#0000"
-            android:padding="16dp"
-            android:layout_marginRight="35dp"/>
-        <!--        android:textColorHint="@color/colorButton"-->
-        <View
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email Address"
+                android:background="@color/white"
+                android:textSize="16dp"
+                android:id="@+id/email_address"
+                android:textColor="@color/black"
+                android:padding="16dp"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            app:passwordToggleEnabled="true"
             android:layout_width="match_parent"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_height="1dp"
-            android:layout_marginBottom="10dp"
-            android:background="#FF018786"/>
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="35dp"
+            android:textColorHint="#FF018786"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:background="@color/white"
+                android:textSize="16dp"
+                android:id="@+id/pswrd"
+                android:textColor="@color/black"
+                android:padding="16dp"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            app:passwordToggleEnabled="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="35dp"
+            android:textColorHint="#FF018786"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Confirm password"
+                android:background="@color/white"
+                android:textSize="16dp"
+                android:id="@+id/confirmpswrd"
+                android:textColor="@color/black"
+                android:padding="16dp"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
         <Button
             android:id="@+id/createButton"
             android:layout_width="match_parent"
@@ -137,6 +136,7 @@
             android:padding="16dp"
             android:layout_alignParentBottom="true"
             android:onClick="signup"
+            style="@style/Widget.MaterialComponents.Button"
             android:layout_marginBottom="28dp"
             android:layout_marginTop="32dp"/>
 
@@ -179,7 +179,8 @@
         android:layout_marginTop="-3dp"
         android:layout_marginBottom="3dp"
         android:gravity="center"
-        android:scaleType="fitXY"/>
+        android:scaleType="fitXY"
+        android:src="@drawable/parkinglogo"/>
 <!--        android:src="@drawable/parkingLogo"-->
 
 </RelativeLayout>

@@ -13,48 +13,45 @@
         android:layout_alignParentBottom="true"
         android:id="@+id/form">
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="35dp"
+            android:textColorHint="#FF018786"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email Address"
+                android:background="@color/white"
+                android:textSize="16dp"
+                android:id="@+id/email_address"
+                android:textColor="@color/black"
+                android:padding="16dp"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/email_address"
+        <com.google.android.material.textfield.TextInputLayout
+            app:passwordToggleEnabled="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email Address"
-            android:layout_marginTop="20dp"
-            android:textSize="16dp"
-            android:textColorHint="#FF018786"
-            android:textColor="#000"
             android:layout_marginLeft="22dp"
-            android:inputType="text"
-            android:background="#0000"
-            android:padding="16dp"
-            android:layout_marginRight="35dp"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_height="1dp"
-            android:background="#BB86FC"/>
-        <EditText
-            android:id="@+id/pswrdL"
-            android:textSize="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
+            android:layout_marginRight="35dp"
             android:textColorHint="#FF018786"
-            android:layout_marginLeft="22dp"
-            android:inputType="textPassword"
-            android:textColor="#000"
-            android:maxLength="12"
-            android:background="#0000"
-            android:padding="16dp"
-            android:layout_marginRight="35dp"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_height="1dp"
-            android:layout_marginBottom="10dp"
-            android:background="#BB86FC"/>
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:background="@color/white"
+                android:textSize="16dp"
+                android:id="@+id/pswrdL"
+                android:textColor="@color/black"
+                android:padding="16dp"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
         <Button
             android:id="@+id/lButton"
             android:layout_width="match_parent"
@@ -70,6 +67,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="28dp"
             android:onClick="login"
+            style="@style/Widget.MaterialComponents.Button"
             android:layout_marginTop="32dp" />
 
         <TextView
@@ -123,7 +121,8 @@
         android:layout_marginTop="-3dp"
         android:layout_marginBottom="3dp"
         android:gravity="center"
-        android:scaleType="fitXY"/>
+        android:scaleType="fitXY"
+        android:src="@drawable/parkinglogo"/>
 <!--        android:src="@drawable/parkingLogo"-->
 
 
