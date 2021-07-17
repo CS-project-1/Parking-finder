@@ -10,4 +10,6 @@
     <string name="invalid_password">Please enter a valid password</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="logout">Logout</string>
+    <string name="email_address">Email Address</string>
+    <string name="reset_password">Reset</string>
 </resources>

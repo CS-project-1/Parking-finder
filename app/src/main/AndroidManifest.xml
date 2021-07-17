@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartParking"
         android:usesCleartextTraffic="true">
-        <activity android:name=".user_profile"></activity>
+        <activity android:name=".ResetPassword"></activity>
+        <activity android:name=".user_profile" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Login" />
         <activity android:name=".SignUp">

@@ -63,11 +63,12 @@ public class Login extends AppCompatActivity {
     }
 
     public void ResetPassword(View view) {
-        Toast.makeText(getApplicationContext(),"Changing your password shortly",Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this,ResetPassword.class));
+
     }
 
     public void login(View view) {
-        String email1 = email.getText().toString().trim();;
+        String email1 = email.getText().toString().trim();
         String password1 = pswrd.getText().toString().trim();
 
         if(awesomeValidation.validate()){
