@@ -6,41 +6,85 @@
     android:layout_height="match_parent"
     tools:context=".user_profile">
 
+
+<!--    FirstName-->
+
+    <!--   Surname-->
+
+    <TextView
+        android:id="@+id/firstname_title"
+        android:layout_width="194dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="16dp"
+        android:text="Firstname"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.023"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/firstnamep"
-        android:layout_width="157dp"
-        android:layout_height="37dp"
-        android:text="First Name"
+        android:layout_width="213dp"
+        android:layout_height="41dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.214" />
+        app:layout_constraintVertical_bias="0.108" />
+
+    <TextView
+        android:layout_width="235dp"
+        android:layout_height="41dp"
+        android:text="Surname"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/surnamep"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstnamep" />
+
+
 
     <TextView
         android:id="@+id/surnamep"
         android:layout_width="211dp"
         android:layout_height="38dp"
-        android:text="Surname"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.304" />
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="221dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="260dp"
+        android:text="Email"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/email_addressp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.447" />
 
     <TextView
         android:id="@+id/email_addressp"
         android:layout_width="230dp"
         android:layout_height="36dp"
-        android:text="Email"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintHorizontal_bias="0.088"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/surnamep"
-        app:layout_constraintVertical_bias="0.061" />
+        app:layout_constraintVertical_bias="0.182" />
 
     <Button
         android:id="@+id/logoutbtn"

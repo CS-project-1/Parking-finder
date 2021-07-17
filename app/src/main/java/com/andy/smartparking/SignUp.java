@@ -78,12 +78,6 @@ public class SignUp extends AppCompatActivity {
     public void LoginRedirect(View view) {
         startActivity(new Intent(SignUp.this,Login.class));
     }
-//    if(awesomeValidation.validate()){
-//                regiterUser();
-//                Toast.makeText(getApplicationContext(),"Form Validate Succesful",Toast.LENGTH_SHORT).show();
-//            }else{
-//                Toast.makeText(getApplicationContext(),"Form validation failed",Toast.LENGTH_SHORT).show();
-//            }
 
     public void signup(View view) {
         String firstname1 = fname.getText().toString().trim();

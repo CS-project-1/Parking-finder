@@ -30,14 +30,14 @@ public class user_profile extends AppCompatActivity {
         setContentView(R.layout.activity_user_profile);
         mAuth = FirebaseAuth.getInstance();
         user = FirebaseAuth.getInstance().getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference();
+        reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
 
         final TextView firstNameTextView = findViewById(R.id.firstnamep);
         final TextView surnameTextView = findViewById(R.id.surnamep);
         final TextView emailTextView = findViewById(R.id.email_addressp);
 
-        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+        reference.child(userID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User userProfile = snapshot.getValue(User.class);
@@ -49,9 +49,8 @@ public class user_profile extends AppCompatActivity {
                     firstNameTextView.setText(firstname);
                     surnameTextView.setText(surname);
                     emailTextView.setText(email);
-
-
-
+                }else{
+                    Toast.makeText(user_profile.this,"Where is user profile",Toast.LENGTH_LONG).show();
                 }
             }
 

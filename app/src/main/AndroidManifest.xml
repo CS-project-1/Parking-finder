@@ -16,14 +16,14 @@
         <activity android:name=".ResetPassword"></activity>
         <activity android:name=".user_profile" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".Login" />
-        <activity android:name=".SignUp">
+        <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity>>
+        <activity android:name=".SignUp"></activity>
     </application>
 
 </manifest>
