@@ -64,7 +64,6 @@ public class Login extends AppCompatActivity {
 
     public void ResetPassword(View view) {
         startActivity(new Intent(this,ResetPassword.class));
-
     }
 
     public void login(View view) {
@@ -81,11 +80,12 @@ public class Login extends AppCompatActivity {
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                         if(user.isEmailVerified()){
                             startActivity(new Intent(Login.this,user_profile.class));
+                            progressBar.setVisibility(View.GONE);
                         }else{
                             user.sendEmailVerification();
                             Toast.makeText(Login.this,"Check your email to verify your accoiunt",Toast.LENGTH_LONG).show();
+                            progressBar.setVisibility(View.GONE);
                         }
-
                     }else{
                         Toast.makeText(Login.this,"Failed to register",Toast.LENGTH_LONG).show();
                         progressBar.setVisibility(View.GONE);
@@ -95,8 +95,6 @@ public class Login extends AppCompatActivity {
 
         }else{
             Toast.makeText(Login.this,"Failed to register",Toast.LENGTH_LONG).show();
-            progressBar.setVisibility(View.GONE);
         }
-
     }
 }

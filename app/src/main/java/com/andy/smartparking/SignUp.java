@@ -116,7 +116,5 @@ public class SignUp extends AppCompatActivity {
             }else{
                 Toast.makeText(getApplicationContext(),"Form validation failed",Toast.LENGTH_SHORT).show();
             }
-
-
     }
 }
