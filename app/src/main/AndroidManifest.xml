@@ -13,17 +13,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartParking"
         android:usesCleartextTraffic="true">
-        <activity android:name=".splash_screen"></activity>
-        <activity android:name=".ResetPassword" />
-        <activity android:name=".user_profile" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Login">
+        <activity android:name=".splash_screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ResetPassword" />
+        <activity android:name=".user_profile" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Login"></activity>
         <activity android:name=".SignUp" />
 
         <meta-data
