@@ -56,7 +56,7 @@
             android:id="@+id/lButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#3700B3"
+            android:background="@drawable/custom_button"
             android:text="Sign In"
             android:textSize="16dp"
             android:textColor="#fff"
