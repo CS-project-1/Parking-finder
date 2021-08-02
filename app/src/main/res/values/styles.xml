@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="app_title">
+
+        <item name="android:fontFamily">@font/bubblegum_sans</item>
+        <item name="android:textColor">@color/dark_grey</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+</resources>

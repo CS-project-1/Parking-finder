@@ -71,17 +71,18 @@
             android:layout_marginTop="32dp" />
 
         <TextView
+            android:id="@+id/signInTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:textColor="#FF018786"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:text="Don't have an account?Sign up here!"
-            android:id="@+id/signInTextView"
             android:clickable="true"
             android:onClick="RedirectSignUp"
-            android:layout_gravity="center_horizontal"/>
+            android:text="Don't have an account?Sign up here!"
+            android:textColor="#FF018786"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

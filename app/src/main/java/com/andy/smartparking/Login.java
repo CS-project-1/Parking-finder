@@ -79,7 +79,7 @@ public class Login extends AppCompatActivity {
                             //redirect to user profile
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                         if(user.isEmailVerified()){
-                            startActivity(new Intent(Login.this,user_profile.class));
+                            startActivity(new Intent(Login.this,MainActivity.class));
                             progressBar.setVisibility(View.GONE);
                         }else{
                             user.sendEmailVerification();
