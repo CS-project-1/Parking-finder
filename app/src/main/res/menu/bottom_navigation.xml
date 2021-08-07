@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/menu_top">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="Booking" />
+        <item
+            android:id="@+id/spots"
+            android:icon="@drawable/ic_phone"
+            android:title="Spots" />
+        <item
+            android:id="@+id/wallet"
+            android:icon="@drawable/ic_share"
+            android:title="Wallet" />
+
+        <item
+            android:id="@+id/qrScanner"
+            android:icon="@drawable/ic_baseline_location_on_24"
+            android:title="Scanner" />
+    </group>
+
+</menu>

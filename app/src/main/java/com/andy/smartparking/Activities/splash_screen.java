@@ -1,9 +1,11 @@
-package com.andy.smartparking;
+package com.andy.smartparking.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.andy.smartparking.R;
 
 public class splash_screen extends AppCompatActivity {
     @Override
@@ -15,7 +17,7 @@ public class splash_screen extends AppCompatActivity {
             public void run() {
                 try {
                     sleep(4000);
-                    Intent intent = new Intent(getApplicationContext(),Login.class);
+                    Intent intent = new Intent(getApplicationContext(), Login.class);
                     startActivity(intent);
                     finish();
                 } catch (InterruptedException e) {

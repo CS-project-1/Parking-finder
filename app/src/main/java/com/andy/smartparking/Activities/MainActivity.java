@@ -1,4 +1,4 @@
-package com.andy.smartparking;
+package com.andy.smartparking.Activities;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -13,7 +13,14 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
+import com.andy.smartparking.Adapter.ViewPagerAdapter;
+import com.andy.smartparking.Model.User;
+import com.andy.smartparking.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -30,10 +37,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     DrawerLayout drawer;
     ActionBarDrawerToggle toggle;
     NavigationView navigationView;
+    BottomNavigationView bottomNavigationView;
     private FirebaseAuth mAuth;
     private FirebaseUser user;
     private DatabaseReference reference;
     private String userID;
+    private ViewPager viewPager ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,12 +53,39 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
 
-
-
+        viewPager =findViewById(R.id.view_pager);
 
         Toolbar toolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
 
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        viewPager =findViewById(R.id.view_pager);
+
+        if (savedInstanceState == null) {
+            setUpViewpager();
+        }
+        bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment fragment = null;
+                switch (item.getItemId()){
+                    case R.id.home:
+                        viewPager.setCurrentItem(0);
+                        break;
+                    case R.id.spots:
+                        viewPager.setCurrentItem(1);
+                        break;
+
+                    case R.id.wallet:
+                        viewPager.setCurrentItem(2);
+                        break;
+                    case R.id.qrScanner:
+                        viewPager.setCurrentItem(3);
+                        break;
+                }
+                return true;
+            }
+        });
         navigationView = findViewById(R.id.navi_view);
         navigationView.setNavigationItemSelectedListener(this);
         View header=navigationView.getHeaderView(0);
@@ -87,6 +123,46 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
+    private void setUpViewpager(){
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        viewPager.setAdapter(viewPagerAdapter);
+
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                switch (position){
+                    case 0:
+                        bottomNavigationView.getMenu().findItem(R.id.home).setChecked(true);
+                        break;
+                    case 1:
+                        bottomNavigationView.getMenu().findItem(R.id.spots).setChecked(true);
+                        break;
+
+                    case 2:
+                        bottomNavigationView.getMenu().findItem(R.id.wallet).setChecked(true);
+                        break;
+                    case 3:
+                        bottomNavigationView.getMenu().findItem(R.id.qrScanner).setChecked(true);
+                        break;
+                }
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
+    }
+
+
+
     @Override
     public boolean onNavigationItemSelected(@NonNull @NotNull MenuItem item) {
         if(item.getItemId() == R.id.home){
@@ -113,7 +189,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Toast.makeText(this, "Cocktails button clicked", Toast.LENGTH_SHORT).show();
         }else if(item.getItemId()==R.id.logout){
             FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(MainActivity.this,Login.class));
+            startActivity(new Intent(MainActivity.this, Login.class));
         }
         return false;
     }

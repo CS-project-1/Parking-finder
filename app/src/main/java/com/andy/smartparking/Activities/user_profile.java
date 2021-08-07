@@ -1,4 +1,4 @@
-package com.andy.smartparking;
+package com.andy.smartparking.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.andy.smartparking.Model.User;
+import com.andy.smartparking.R;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -67,6 +69,6 @@ public class user_profile extends AppCompatActivity {
 
     public void logout(View view) {
         FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(user_profile.this,Login.class));
+        startActivity(new Intent(user_profile.this, Login.class));
     }
 }

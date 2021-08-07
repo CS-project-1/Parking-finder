@@ -1,4 +1,4 @@
-package com.andy.smartparking;
+package com.andy.smartparking.Activities;
 
 import android.os.Bundle;
 import android.util.Patterns;
@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.andy.smartparking.R;
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.basgeekball.awesomevalidation.utility.RegexTemplate;

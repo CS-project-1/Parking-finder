@@ -1,4 +1,4 @@
-package com.andy.smartparking;
+package com.andy.smartparking.Model;
 
 public class User {
     public String firstName;

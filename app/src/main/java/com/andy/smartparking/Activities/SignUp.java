@@ -1,4 +1,4 @@
-package com.andy.smartparking;
+package com.andy.smartparking.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.andy.smartparking.Model.User;
+import com.andy.smartparking.R;
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.basgeekball.awesomevalidation.utility.RegexTemplate;
@@ -76,7 +78,7 @@ public class SignUp extends AppCompatActivity {
     }
 
     public void LoginRedirect(View view) {
-        startActivity(new Intent(SignUp.this,Login.class));
+        startActivity(new Intent(SignUp.this, Login.class));
     }
 
     public void signup(View view) {
