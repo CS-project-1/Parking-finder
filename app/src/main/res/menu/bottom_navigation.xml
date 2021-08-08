@@ -8,7 +8,7 @@
             android:title="Booking" />
         <item
             android:id="@+id/spots"
-            android:icon="@drawable/ic_phone"
+            android:icon="@drawable/ic_map"
             android:title="Spots" />
         <item
             android:id="@+id/wallet"

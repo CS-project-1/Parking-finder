@@ -3,15 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00FF00"
     tools:context=".Fragments.MapsFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <fragment
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="339dp"
-        android:text="Maps" />
+        android:id="@+id/google_maps"
+        android:name="com.google.android.gms.maps.SupportMapFragment"/>
 
 </RelativeLayout>
