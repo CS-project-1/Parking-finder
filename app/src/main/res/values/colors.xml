@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="dark_grey">#FF5E5E5E</color>
     <color name="back_grey">#FF808080</color>
+    <color name="priColor">#FF03DAC5</color>
 </resources>

@@ -8,9 +8,12 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import com.andy.smartparking.R;
+import com.google.android.gms.maps.GoogleMap;
 
 
 public class QRFragment extends Fragment {
+
+    private GoogleMap mGoogleMap;
 
 
     public QRFragment() {
@@ -23,6 +26,7 @@ public class QRFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
