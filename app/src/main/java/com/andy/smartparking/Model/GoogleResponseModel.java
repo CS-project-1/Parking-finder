@@ -1,5 +1,6 @@
 package com.andy.smartparking.Model;
 
+import com.andy.smartparking.GooglePlaceModel;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

@@ -29,10 +29,14 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+//    buildFeatures {
+//        dataBinding true
+//    }
     buildFeatures {
-//        databinding true
+        dataBinding true
         viewBinding true
     }
+
 }
 
 dependencies {
@@ -70,6 +74,9 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 //volley dependency
     implementation 'com.android.volley:volley:1.2.0'
+
+    // Image Cropper Library
+//    api 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
 
     implementation 'com.mikhaellopez:circularimageview:4.3.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'

@@ -1,5 +1,7 @@
-package com.andy.smartparking.Model;
+package com.andy.smartparking;
 
+import com.andy.smartparking.Model.GeometryModel;
+import com.andy.smartparking.Model.PhotoModel;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

@@ -23,9 +23,14 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.PagerSnapHelper;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SnapHelper;
 
+import com.andy.smartparking.Adapter.ParkingAdapter;
 import com.andy.smartparking.Constant.AllConstant;
-import com.andy.smartparking.Model.GooglePlaceModel;
+import com.andy.smartparking.GooglePlaceModel;
 import com.andy.smartparking.Model.GoogleResponseModel;
 import com.andy.smartparking.Model.ParkingLocation;
 import com.andy.smartparking.Permissions.AppPermissions;
@@ -83,6 +88,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback,
     private RetrofitAPI retrofitAPI;
     private List<GooglePlaceModel> googlePlaceModelList;
     private ParkingLocation selectedPlaceModel;
+    private ParkingAdapter googlePlaceAdapter;
 //    private LoadingDialog loadingDialog;
 
 
@@ -184,11 +190,17 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback,
             binding.placesGroup.addView(chip);
 
         }
+        setUpRecyclerView();
+
 
     }
 
     @Override
     public boolean onMarkerClick(@NonNull @NotNull Marker marker) {
+        int markerTag = (int) marker.getTag();
+//        Log.d("TAG", "onMarkerClick: " + markerTag);
+
+        binding.placesRecyclerView.scrollToPosition(markerTag);
         return false;
     }
 
@@ -397,7 +409,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback,
                                     }
 
 
-//                                    googlePlaceAdapter.setGooglePlaceModels(googlePlaceModelList);
+                                    googlePlaceAdapter.setGooglePlaceModels(googlePlaceModelList);
 
 //                                } else if (response.body().getError() != null) {
 //                                    Snackbar.make(binding.getRoot(),
@@ -407,7 +419,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback,
 
                                     mGoogleMap.clear();
                                     googlePlaceModelList.clear();
-//                                    googlePlaceAdapter.setGooglePlaceModels(googlePlaceModelList);
+                                    googlePlaceAdapter.setGooglePlaceModels(googlePlaceModelList);
                                     distance += 2000;
 //                                    Log.d("TAG", "onResponse: " + distance);
                                     getPlaces(parking);
@@ -458,4 +470,32 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback,
         background.draw(canvas);
         return BitmapDescriptorFactory.fromBitmap(bitmap);
     }
+    private void setUpRecyclerView() {
+
+        binding.placesRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false));
+        binding.placesRecyclerView.setHasFixedSize(false);
+        googlePlaceAdapter = new ParkingAdapter();
+        binding.placesRecyclerView.setAdapter(googlePlaceAdapter);
+
+        SnapHelper snapHelper = new PagerSnapHelper();
+
+        snapHelper.attachToRecyclerView(binding.placesRecyclerView);
+
+        binding.placesRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                LinearLayoutManager linearLayoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
+
+                int position = linearLayoutManager.findFirstCompletelyVisibleItemPosition();
+                if (position > -1) {
+                    GooglePlaceModel googlePlaceModel = googlePlaceModelList.get(position);
+                    mGoogleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(googlePlaceModel.getGeometry().getLocation().getLat(),
+                            googlePlaceModel.getGeometry().getLocation().getLng()), 20));
+                }
+            }
+        });
+
+    }
+
 }
