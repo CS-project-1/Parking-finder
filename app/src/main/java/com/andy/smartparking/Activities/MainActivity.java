@@ -185,8 +185,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             intent.putExtra(Intent.EXTRA_TEXT,Body);
             intent.putExtra(Intent.EXTRA_TEXT,Sub);
             startActivity(Intent.createChooser(intent,"Share using"));
-        }else if(item.getItemId()== R.id.cocktails){
-            Toast.makeText(this, "Cocktails button clicked", Toast.LENGTH_SHORT).show();
+
         }else if(item.getItemId()==R.id.logout){
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(MainActivity.this, Login.class));
