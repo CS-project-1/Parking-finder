@@ -25,10 +25,7 @@
     <group
         android:id="@+id/menu_bottom">
 
-        <item
-            android:id="@+id/cocktails"
-            android:icon="@drawable/cocktail"
-            android:title="Cocktails" />
+
         <item
             android:id="@+id/logout"
 
