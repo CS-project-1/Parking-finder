@@ -1,4 +1,4 @@
-package com.andy.smartparking;
+package com.andy.smartparking.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.andy.smartparking.R;
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.basgeekball.awesomevalidation.utility.RegexTemplate;
@@ -58,13 +59,12 @@ public class Login extends AppCompatActivity {
     }
 
     public void RedirectSignUp(View view) {
-        Intent intent = new Intent(getApplicationContext(),SignUp.class);
+        Intent intent = new Intent(getApplicationContext(), SignUp.class);
         startActivity(intent);
     }
 
     public void ResetPassword(View view) {
-        startActivity(new Intent(this,ResetPassword.class));
-
+        startActivity(new Intent(this, ResetPassword.class));
     }
 
     public void login(View view) {
@@ -80,12 +80,13 @@ public class Login extends AppCompatActivity {
                             //redirect to user profile
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                         if(user.isEmailVerified()){
-                            startActivity(new Intent(Login.this,user_profile.class));
+                            startActivity(new Intent(Login.this, MainActivity.class));
+                            progressBar.setVisibility(View.GONE);
                         }else{
                             user.sendEmailVerification();
                             Toast.makeText(Login.this,"Check your email to verify your accoiunt",Toast.LENGTH_LONG).show();
+                            progressBar.setVisibility(View.GONE);
                         }
-
                     }else{
                         Toast.makeText(Login.this,"Failed to register",Toast.LENGTH_LONG).show();
                         progressBar.setVisibility(View.GONE);
@@ -95,8 +96,6 @@ public class Login extends AppCompatActivity {
 
         }else{
             Toast.makeText(Login.this,"Failed to register",Toast.LENGTH_LONG).show();
-            progressBar.setVisibility(View.GONE);
         }
-
     }
 }

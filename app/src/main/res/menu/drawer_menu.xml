@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/menu_top">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="Home" />
+        <item
+            android:id="@+id/contact_us"
+            android:icon="@drawable/ic_phone"
+            android:title="Contact Us" />
+        <item
+            android:id="@+id/share_app"
+            android:icon="@drawable/ic_share"
+            android:title="Share App" />
+
+        <item
+            android:id="@+id/location"
+            android:icon="@drawable/ic_baseline_location_on_24"
+            android:title="Locate Us" />
+    </group>
+
+    <group
+        android:id="@+id/menu_bottom">
+
+        <item
+            android:id="@+id/cocktails"
+            android:icon="@drawable/cocktail"
+            android:title="Cocktails" />
+        <item
+            android:id="@+id/logout"
+
+            android:title="Logout" />
+
+
+    </group>
+
+
+
+</menu>

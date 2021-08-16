@@ -12,4 +12,11 @@
     <string name="logout">Logout</string>
     <string name="email_address">Email Address</string>
     <string name="reset_password">Reset</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="googleMaps">AIzaSyB1l1a0GvbKUfaX5aGlIRACpmgLZAQY3rY</string>
+    <string name="placesApi">AIzaSyAEcdCiiiMmL_ZygpJYg0jKGFspn6a9np8</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="distance">distance</string>
+    <string name="parking">parking</string>
 </resources>

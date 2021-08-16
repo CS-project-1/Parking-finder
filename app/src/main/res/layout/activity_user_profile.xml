@@ -4,12 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".user_profile">
+    tools:context=".Activities.user_profile">
 
 
-<!--    FirstName-->
 
-    <!--   Surname-->
 
     <TextView
         android:id="@+id/firstname_title"

@@ -1,4 +1,4 @@
-package com.andy.smartparking;
+package com.andy.smartparking.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.andy.smartparking.Model.User;
+import com.andy.smartparking.R;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -23,19 +26,22 @@ public class user_profile extends AppCompatActivity {
     private FirebaseUser user;
     private DatabaseReference reference;
     private String userID;
+    NavigationView navigationView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_profile);
+        setContentView(R.layout.drawer_header);
         mAuth = FirebaseAuth.getInstance();
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
+        navigationView = findViewById(R.id.navi_view);
+        View header=navigationView.getHeaderView(0);
 
-        final TextView firstNameTextView = findViewById(R.id.firstnamep);
-        final TextView surnameTextView = findViewById(R.id.surnamep);
-        final TextView emailTextView = findViewById(R.id.email_addressp);
+        final TextView firstNameTextView1 = header.findViewById(R.id.fName);
+        final TextView surnameTextView1 = header.findViewById(R.id.lName);
+        final TextView emailTextView1 = header.findViewById(R.id.userEmail);
 
         reference.child(userID).addValueEventListener(new ValueEventListener() {
             @Override
@@ -46,9 +52,9 @@ public class user_profile extends AppCompatActivity {
                     String surname = userProfile.surName;
                     String email = userProfile.email;
 
-                    firstNameTextView.setText(firstname);
-                    surnameTextView.setText(surname);
-                    emailTextView.setText(email);
+                    firstNameTextView1.setText(firstname);
+                    surnameTextView1.setText(surname);
+                    emailTextView1.setText(email);
                 }else{
                     Toast.makeText(user_profile.this,"Where is user profile",Toast.LENGTH_LONG).show();
                 }
@@ -63,6 +69,6 @@ public class user_profile extends AppCompatActivity {
 
     public void logout(View view) {
         FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(user_profile.this,Login.class));
+        startActivity(new Intent(user_profile.this, Login.class));
     }
 }
