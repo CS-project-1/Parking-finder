@@ -1,7 +1,7 @@
 package com.andy.smartparking.Model;
 
 public class User {
-    public String firstName;
+    public String firstName,image;;
     public String surName;
     public String email;
 
@@ -12,6 +12,21 @@ public class User {
         this.firstName = firstName;
         this.surName = surName;
         this.email = email;
+    }
+
+    public User(String firstName, String image, String surName, String email) {
+        this.firstName = firstName;
+        this.image = image;
+        this.surName = surName;
+        this.email = email;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getFirstName() {

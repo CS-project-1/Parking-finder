@@ -1,16 +1,19 @@
 package com.andy.smartparking.Activities;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.andy.smartparking.Model.User;
+import com.andy.smartparking.Permissions.AppPermissions;
 import com.andy.smartparking.R;
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
@@ -19,14 +22,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class SignUp extends AppCompatActivity {
     private FirebaseAuth mAuth;
-//    firstname
-//    surname
-//    password
-//    email
     private EditText fname;
     private EditText sname;
     private EditText password;
@@ -34,6 +36,13 @@ public class SignUp extends AppCompatActivity {
     private EditText email;
     private ProgressBar progressBar;
     AwesomeValidation awesomeValidation;
+
+    private Uri profileImageUri = null;
+    private AppPermissions appPermissions;
+    private StorageReference storageReference;
+    private DatabaseReference userDetailsReference;
+    private final static int GALLERY_REQ = 1;
+    private ImageButton imageButton;
 
 
     @Override
@@ -48,6 +57,12 @@ public class SignUp extends AppCompatActivity {
         email = (EditText)findViewById(R.id.email_address);
         progressBar = (ProgressBar)findViewById(R.id.indeterminateBar);
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+        appPermissions = new AppPermissions();
+
+        storageReference = FirebaseStorage.getInstance().getReference();
+        imageButton = findViewById(R.id.userProfilePicture);
+
+        userDetailsReference = FirebaseDatabase.getInstance().getReference().child("Users");
 
 
         //        add validation to surname
@@ -80,7 +95,6 @@ public class SignUp extends AppCompatActivity {
     public void LoginRedirect(View view) {
         startActivity(new Intent(SignUp.this, Login.class));
     }
-
     public void signup(View view) {
         String firstname1 = fname.getText().toString().trim();
         String surname2 = sname.getText().toString().trim();
@@ -115,8 +129,9 @@ public class SignUp extends AppCompatActivity {
                             }
                         }
                     });
-            }else{
-                Toast.makeText(getApplicationContext(),"Form validation failed",Toast.LENGTH_SHORT).show();
-            }
+        }else{
+            Toast.makeText(getApplicationContext(),"Form validation failed",Toast.LENGTH_SHORT).show();
+        }
     }
 }
+

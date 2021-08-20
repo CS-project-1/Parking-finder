@@ -64,6 +64,9 @@ public class GooglePlaceModel {
     @Expose
     private String vicinity;
 
+    @Expose(serialize = false, deserialize = false)
+    private boolean isSaved;
+
     public String getBusinessStatus() {
         return businessStatus;
     }
@@ -174,5 +177,13 @@ public class GooglePlaceModel {
 
     public void setVicinity(String vicinity) {
         this.vicinity = vicinity;
+    }
+
+    public boolean isSaved() {
+        return isSaved;
+    }
+
+    public void setSaved(boolean saved) {
+        isSaved = saved;
     }
 }

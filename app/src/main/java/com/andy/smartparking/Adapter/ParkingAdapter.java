@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.andy.smartparking.GooglePlaceModel;
+import com.andy.smartparking.NearbyParkingInterface;
 import com.andy.smartparking.R;
 import com.andy.smartparking.databinding.ParkingSlotsLayoutBinding;
 
@@ -18,6 +19,11 @@ import java.util.List;
 public class ParkingAdapter extends RecyclerView.Adapter<ParkingAdapter.ViewHolder>{
 
     private List<GooglePlaceModel> googlePlaceModels;
+    private NearbyParkingInterface nearbyParkingInterface;
+
+    public ParkingAdapter(NearbyParkingInterface nearbyParkingInterface) {
+        this.nearbyParkingInterface = nearbyParkingInterface;
+    }
 
     @NonNull
     @Override
@@ -33,6 +39,7 @@ public class ParkingAdapter extends RecyclerView.Adapter<ParkingAdapter.ViewHold
         if (googlePlaceModels != null) {
             GooglePlaceModel placeModel = googlePlaceModels.get(position);
             holder.binding.setGooglePlaceModel(placeModel);
+            holder.binding.setListener(nearbyParkingInterface);
 
         }
 
