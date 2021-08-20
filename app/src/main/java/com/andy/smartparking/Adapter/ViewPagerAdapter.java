@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import com.andy.smartparking.Fragments.HomeFragment;
 import com.andy.smartparking.Fragments.MapsFragment;
 import com.andy.smartparking.Fragments.QRFragment;
-import com.andy.smartparking.Fragments.WalletFragment;
+import com.andy.smartparking.Fragments.SavedParking;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -28,7 +28,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
             case 1:
                 return new MapsFragment();
             case 2:
-                return new WalletFragment();
+                return new SavedParking();
             case 3:
                 return new QRFragment();
             default:

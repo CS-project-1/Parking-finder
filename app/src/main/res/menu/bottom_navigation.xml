@@ -12,13 +12,13 @@
             android:title="Spots" />
         <item
             android:id="@+id/wallet"
-            android:icon="@drawable/ic_share"
-            android:title="Wallet" />
+            android:icon="@drawable/ic_baseline_location_on_24"
+            android:title="Saved Parking" />
 
         <item
             android:id="@+id/qrScanner"
-            android:icon="@drawable/ic_baseline_location_on_24"
+            android:icon="@drawable/ic_share"
             android:title="Scanner" />
     </group>
-
+<!---->
 </menu>

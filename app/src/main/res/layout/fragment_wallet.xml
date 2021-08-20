@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ADD8E6"
-    tools:context=".Fragments.WalletFragment">
+    tools:context=".Fragments.SavedParking">
 
-    <TextView
-        android:layout_width="76dp"
-        android:layout_height="35dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="339dp"
-        android:text="Wallet" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/savedRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        tools:listitem="@layout/saved_parking" />
 
 </RelativeLayout>
