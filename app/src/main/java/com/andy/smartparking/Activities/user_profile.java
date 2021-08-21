@@ -31,17 +31,16 @@ public class user_profile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.drawer_header);
+        setContentView(R.layout.activity_user_profile);
         mAuth = FirebaseAuth.getInstance();
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
-        navigationView = findViewById(R.id.navi_view);
-        View header=navigationView.getHeaderView(0);
 
-        final TextView firstNameTextView1 = header.findViewById(R.id.fName);
-        final TextView surnameTextView1 = header.findViewById(R.id.lName);
-        final TextView emailTextView1 = header.findViewById(R.id.userEmail);
+
+        final TextView firstNameTextView1 = findViewById(R.id.firstnamep);
+        final TextView surnameTextView1 = findViewById(R.id.surnamep);
+        final TextView emailTextView1 = findViewById(R.id.email_addressp);
 
         reference.child(userID).addValueEventListener(new ValueEventListener() {
             @Override
@@ -71,4 +70,5 @@ public class user_profile extends AppCompatActivity {
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(user_profile.this, Login.class));
     }
+
 }

@@ -14,7 +14,8 @@
         <item
             android:id="@+id/share_app"
             android:icon="@drawable/ic_share"
-            android:title="Share App" />
+            android:title="Share"
+ />
 
         <item
             android:id="@+id/location"
@@ -25,6 +26,12 @@
     <group
         android:id="@+id/menu_bottom">
 
+
+
+        <item
+            android:id="@+id/cocktails"
+            android:icon="@drawable/ic_account"
+            android:title="Profile" />
 
         <item
             android:id="@+id/logout"

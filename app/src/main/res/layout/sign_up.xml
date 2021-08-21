@@ -172,15 +172,30 @@
         android:layout_centerHorizontal="true"/>
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="400dp"
+        android:layout_height="300dp"
         android:layout_above="@+id/form"
-        android:layout_below="@+id/create"
-        android:layout_marginTop="-3dp"
-        android:layout_marginBottom="3dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="-5dp"
+        android:layout_marginBottom="83dp"
         android:gravity="center"
         android:scaleType="fitXY"
-        android:src="@drawable/parkinglogo"/>
-<!--        android:src="@drawable/parkingLogo"-->
+        android:src="@drawable/parkinglogo" />
+
+    <!--            <ImageView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_above="@+id/form"-->
+<!--        android:layout_below="@+id/create"-->
+<!--        android:layout_marginTop="-3dp"-->
+<!--        android:layout_marginBottom="3dp"-->
+<!--        android:gravity="center"-->
+<!--        android:scaleType="fitXY"-->
+<!--        android:src="@drawable/parkinglogo"/>-->
+
 
 </RelativeLayout>

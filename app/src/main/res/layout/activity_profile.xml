@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.ProfileActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@color/teal_200"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+    <LinearLayout
+        android:layout_below="@id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:background="@drawable/layoutsyle"
+        android:layout_centerHorizontal="true">
+
+
+        <ImageButton
+            android:id="@+id/imagebutton"
+            android:layout_width="250dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/add_profile"
+            />
+
+        <Button
+            android:layout_marginTop="10dp"
+
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:id="@+id/doneBtn"
+            android:layout_width="150dp"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            android:layout_margin="16dp"
+            />
+
+    </LinearLayout>
+</RelativeLayout>
