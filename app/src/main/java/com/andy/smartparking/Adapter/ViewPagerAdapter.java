@@ -24,17 +24,16 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return new HomeFragment();
-            case 1:
                 return new MapsFragment();
+            case 1:
+                return new HomeFragment();
             case 2:
                 return new SavedParking();
             case 3:
                 return new QRFragment();
             default:
-                return new HomeFragment();
+                return new MapsFragment();
         }
-
     }
 
     @Override
