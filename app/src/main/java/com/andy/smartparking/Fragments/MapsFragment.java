@@ -618,7 +618,16 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback,
 
     @Override
     public void onDirectionClick(GooglePlaceModel googlePlaceModel) {
-
+//        String placeId = googlePlaceModel.getPlaceId();
+//        Double lat = googlePlaceModel.getGeometry().getLocation().getLat();
+//        Double lng = googlePlaceModel.getGeometry().getLocation().getLng();
+//
+//        Intent intent = new Intent(requireContext(), DirectionActivity.class);
+//        intent.putExtra("placeId", placeId);
+//        intent.putExtra("lat", lat);
+//        intent.putExtra("lng", lng);
+//
+//        startActivity(intent);
 
     }
 
