@@ -1,10 +1,10 @@
 package com.andy.smartparking.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
 
+import com.andy.smartparking.Activities.DirectionActivity;
+import com.andy.smartparking.GooglePlaceModel;
 import com.andy.smartparking.LoadingDialog;
 import com.andy.smartparking.R;
 import com.andy.smartparking.SavedParkingInterface;
@@ -37,6 +39,7 @@ import java.util.ArrayList;
 
 
 public class SavedParking extends Fragment implements SavedParkingInterface {
+
     private FragmentWalletBinding binding;
     private FirebaseAuth firebaseAuth;
     private ArrayList<SavedPlaceModel> savedPlaceModelArrayList;
@@ -132,9 +135,39 @@ public class SavedParking extends Fragment implements SavedParkingInterface {
         firebaseRecyclerAdapter.stopListening();
     }
 
+//    @Override
+//    public void onDirectionClick(GooglePlaceModel googlePlaceModel) {
+//        String placeId = googlePlaceModel.getPlaceId();
+//        Double lat = googlePlaceModel.getGeometry().getLocation().getLat();
+//        Double lng = googlePlaceModel.getGeometry().getLocation().getLng();
+//
+//        Intent intent = new Intent(requireContext(), DirectionActivity.class);
+//        intent.putExtra("placeId", placeId);
+//        intent.putExtra("lat", lat);
+//        intent.putExtra("lng", lng);
+//
+//        startActivity(intent);
+//
+//    }
+
     @Override
     public void onLocationClick(SavedPlaceModel savedPlaceModel) {
-        Toast.makeText(requireContext(),"Parking Clicked",Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void onLocationClick(SavedPlaceModel savedPlaceModel, GooglePlaceModel googlePlaceModel) {
+
+        String placeId = googlePlaceModel.getPlaceId();
+        Double lat = googlePlaceModel.getGeometry().getLocation().getLat();
+        Double lng = googlePlaceModel.getGeometry().getLocation().getLng();
+
+        Intent intent = new Intent(requireContext(), DirectionActivity.class);
+        intent.putExtra("placeId", placeId);
+        intent.putExtra("lat", lat);
+        intent.putExtra("lng", lng);
+
+        startActivity(intent);
 
     }
 

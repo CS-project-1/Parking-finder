@@ -3,6 +3,7 @@ package com.andy.smartparking.Fragments;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -28,6 +29,7 @@ import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
 
+import com.andy.smartparking.Activities.DirectionActivity;
 import com.andy.smartparking.Adapter.ParkingAdapter;
 import com.andy.smartparking.Constant.AllConstant;
 import com.andy.smartparking.GooglePlaceModel;
@@ -618,16 +620,16 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback,
 
     @Override
     public void onDirectionClick(GooglePlaceModel googlePlaceModel) {
-//        String placeId = googlePlaceModel.getPlaceId();
-//        Double lat = googlePlaceModel.getGeometry().getLocation().getLat();
-//        Double lng = googlePlaceModel.getGeometry().getLocation().getLng();
-//
-//        Intent intent = new Intent(requireContext(), DirectionActivity.class);
-//        intent.putExtra("placeId", placeId);
-//        intent.putExtra("lat", lat);
-//        intent.putExtra("lng", lng);
-//
-//        startActivity(intent);
+        String placeId = googlePlaceModel.getPlaceId();
+        Double lat = googlePlaceModel.getGeometry().getLocation().getLat();
+        Double lng = googlePlaceModel.getGeometry().getLocation().getLng();
+
+        Intent intent = new Intent(requireContext(), DirectionActivity.class);
+        intent.putExtra("placeId", placeId);
+        intent.putExtra("lat", lat);
+        intent.putExtra("lng", lng);
+
+        startActivity(intent);
 
     }
 

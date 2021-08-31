@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -370,4 +371,6 @@ public class DirectionActivity extends AppCompatActivity implements OnMapReadyCa
         return path;
 
     }
+
+
 }
