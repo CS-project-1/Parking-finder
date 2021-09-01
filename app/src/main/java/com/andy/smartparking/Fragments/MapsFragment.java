@@ -30,6 +30,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
 
 import com.andy.smartparking.Activities.DirectionActivity;
+import com.andy.smartparking.Adapter.InfoWindowAdapter;
 import com.andy.smartparking.Adapter.ParkingAdapter;
 import com.andy.smartparking.Constant.AllConstant;
 import com.andy.smartparking.GooglePlaceModel;
@@ -104,7 +105,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback,
     private ArrayList<String> userSavedLocationId;
     private LoadingDialog loadingDialog;
     private DatabaseReference locationReference, userLocationReference;
-
+    private GoogleMap.InfoWindowAdapter infoWindowAdapter;
 
 
 
@@ -345,10 +346,10 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback,
             @Override
             public void onSuccess(Location location) {
                 currentLocation = location;
-
+                infoWindowAdapter = null;
+                infoWindowAdapter = new InfoWindowAdapter(currentLocation,requireContext());
+                mGoogleMap.setInfoWindowAdapter(infoWindowAdapter);
                 moveCameraToLocation(location);
-
-
             }
         });
     }

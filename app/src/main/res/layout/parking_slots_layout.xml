@@ -75,14 +75,20 @@
                     android:src="@{googlePlaceModel.saved?@drawable/ic_bookmarked:@drawable/ic_bookmark}"
                     app:tint="@color/black" />
 
+                   <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_toStartOf="@+id/imgSaveLocation"
+                        android:onClick="@{()->listener.onDirectionClick(googlePlaceModel)}"
+                        android:src="@drawable/ic_directions"
+                        app:tint="#000000" />
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_toStartOf="@+id/imgSaveLocation"
-
-                    android:src="@drawable/ic_directions"
-                    app:tint="#000000" />
+<!--                <ImageView-->
+<!--                    android:layout_width="30dp"-->
+<!--                    android:layout_height="30dp"-->
+<!--                    android:layout_toStartOf="@+id/imgSaveLocation"-->
+<!--                    android:src="@drawable/ic_directions"-->
+<!--                    app:tint="#000000" />-->
             </RelativeLayout>
 <!--            android:onClick="@{()->listener.onDirectionClick(googlePlaceModel)}"-->
 

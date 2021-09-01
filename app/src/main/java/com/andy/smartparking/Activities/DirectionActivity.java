@@ -7,7 +7,6 @@ import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -87,7 +86,7 @@ public class DirectionActivity extends AppCompatActivity implements OnMapReadyCa
         endLng = getIntent().getDoubleExtra("lng", 0.0);
         placeId = getIntent().getStringExtra("placeId");
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         appPermissions = new AppPermissions();
 
 
@@ -160,7 +159,7 @@ public class DirectionActivity extends AppCompatActivity implements OnMapReadyCa
                             if (response.body().getDirectionRouteModels().size() > 0) {
                                 DirectionRouteModel routeModel = response.body().getDirectionRouteModels().get(0);
 
-                                getSupportActionBar().setTitle(routeModel.getSummary());
+//                                getSupportActionBar().setTitle(routeModel.getSummary());
 
                                 DirectionLegModel legModel = routeModel.getLegs().get(0);
                                 binding.txtStartLocation.setText(legModel.getStartAddress());
@@ -248,7 +247,7 @@ public class DirectionActivity extends AppCompatActivity implements OnMapReadyCa
         mGoogleMap.clear();
         binding.txtStartLocation.setText("");
         binding.txtEndLocation.setText("");
-        getSupportActionBar().setTitle("");
+//        getSupportActionBar().setTitle("");
         bottomSheetLayoutBinding.txtSheetDistance.setText("");
         bottomSheetLayoutBinding.txtSheetTime.setText("");
     }

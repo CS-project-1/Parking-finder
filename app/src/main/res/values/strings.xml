@@ -29,4 +29,12 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="description">description</string>
+    <string name="todo">TODO</string>
+    <string name="from">From</string>
+    <string name="asdgahsyd">asdgahsyd</string>
+    <string name="todo1">TODO</string>
+    <string name="to">To</string>
+    <string name="bike">Bike</string>
+    <string name="driving">Driving</string>
 </resources>

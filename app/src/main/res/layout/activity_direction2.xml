@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,7 +14,7 @@
         android:id="@+id/directionMap"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
 
     <include
         android:id="@+id/bottom_sheet"
@@ -25,10 +26,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|end"
         android:layout_marginEnd="15dp"
+        android:contentDescription="@string/description"
         android:src="@drawable/ic_traffic"
         app:backgroundTint="@color/white"
         app:fabCustomSize="40dp"
-        app:tint="@color/back_grey" />
+        app:tint="@color/teal_700" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -54,7 +56,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_baseline_location_on_24"
-                    app:tint="@color/black" />
+                    app:tint="@color/black"
+                    android:contentDescription="@string/todo" />
 
                 <TextView
                     android:id="@+id/txtStartLbl"
@@ -62,7 +65,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_toEndOf="@+id/imgStartLocation"
-                    android:text="From"
+                    android:text="@string/from"
                     android:textColor="@color/quantum_black_hint_text"
                     android:textStyle="bold" />
 
@@ -75,7 +78,7 @@
                     android:layout_marginTop="10dp"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    android:text="asdgahsyd"
+                    android:text="@string/asdgahsyd"
                     android:textColor="@color/quantum_black_text"
                     android:textStyle="bold" />
 
@@ -95,7 +98,8 @@
                     android:layout_below="@+id/view"
                     android:layout_marginTop="10dp"
                     android:src="@drawable/ic_baseline_location_on_24"
-                    app:tint="@color/quantum_googred500" />
+                    app:tint="@color/quantum_googred500"
+                    android:contentDescription="@string/todo1" />
 
                 <TextView
                     android:id="@+id/txtEndLbl"
@@ -105,7 +109,7 @@
                     android:layout_alignStart="@+id/view"
                     android:layout_marginTop="10dp"
                     android:layout_toEndOf="@+id/imgEndLocation"
-                    android:text="To"
+                    android:text="@string/to"
                     android:textColor="@color/quantum_black_hint_text"
                     android:textStyle="bold" />
 
@@ -118,7 +122,7 @@
                     android:layout_marginTop="10dp"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    android:text="asdgahsyd"
+                    android:text="@string/asdgahsyd"
                     android:textColor="@color/quantum_black_text"
                     android:textStyle="bold" />
 
@@ -134,6 +138,7 @@
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="10dp"
             android:scrollbars="none">
+
 
 
             <com.google.android.material.chip.ChipGroup
@@ -152,7 +157,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checkable="true"
-                    android:text="Driving"
+                    android:text="@string/driving"
                     android:textColor="@color/white"
                     app:checkedIconEnabled="true"
                     app:chipBackgroundColor="@color/teal_700" />
@@ -162,7 +167,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checkable="true"
-                    android:text="Bike"
+                    android:text="@string/bike"
                     android:textColor="@color/white"
                     app:chipBackgroundColor="@color/teal_700" />
 
